@@ -58,10 +58,10 @@ app.get('/api/animals', (req, res) => {
 // this is the second route. param route must come after other routes
 app.get('/api/animals/:id', (req, res) => {
     const result = findById(req.params.id, animals);
-    if (result) {
+    if (results) {
         res.json(result);
     } else {
-        res.sendStatus(404);
+        res.send(400);
     }
 });
 app.listen(PORT, () => {
