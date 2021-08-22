@@ -1,5 +1,6 @@
 const {animals} = require('./data/animals.json');
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // get() method requires two parameters . The first is a string that describes the route the client will have to fetch from. The second is a callback function that will execute every time that route is accessed with a GET request.
@@ -49,6 +50,6 @@ app.get('/api/animals', (req, res) => {
     console.log(req.query)
     res.json(results);
 });
-app.listen(3001, () => {
-    console.log('API server now on port 3001!');
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
